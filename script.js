@@ -6,7 +6,6 @@ document.getElementById('fetchRepo').addEventListener('click', function() {
             const links = parseLinksFromReadme(data, linkType);
             const randomIndex = Math.floor(Math.random() * links.length);
             const randomRepoUrl = links[randomIndex];
-            window.open('about:blank', '_blank');
             window.location.href = randomRepoUrl;
         })
         .catch(error => console.error('Error fetching data:', error));
