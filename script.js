@@ -52,7 +52,7 @@ function parseLinksFromReadme(markdown, linkType) {
     }
 
     const filteredLinks = links.filter(link => {
-        return !blacklist.some(blacklisted => link.startsWith(blacklisted)) && (link.startsWith('http://') || link.startsWith('https://'));
+        return !blacklist.some(blacklisted => link.includes(blacklisted)) && (link.startsWith('http://') || link.startsWith('https://'));
     });
 
     return filteredLinks;
