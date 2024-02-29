@@ -16,6 +16,11 @@ function parseLinksFromReadme(markdown, linkType) {
     const links = [];
     let inAnalyticsSection = false;
     let stopParsing = false;
+    const blacklist = [
+        'https://steamwo1f.github.io/ranlab/',
+        'https://en.wikipedia.org'
+    ];
+
     for (let line of lines) {
         if (line.trim() === '## Software') {
             inAnalyticsSection = false;
@@ -45,5 +50,10 @@ function parseLinksFromReadme(markdown, linkType) {
             });
         }
     }
-    return links;
+
+    const filteredLinks = links.filter(link => {
+        return !blacklist.some(blacklisted => link.startsWith(blacklisted)) && (link.startsWith('http://') || link.startsWith('https://'));
+    });
+
+    return filteredLinks;
 }

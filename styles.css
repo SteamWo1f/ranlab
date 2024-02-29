@@ -12,6 +12,13 @@ body {
     color: #333;
 }
 
+.info-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
 button {
     background-color: #4CAF50;
     color: white;
@@ -36,7 +43,7 @@ h2, h3 {
 }
 
 p {
-    line-height: 0.6;
+    line-height: 1.8;
 }
 
 a {
