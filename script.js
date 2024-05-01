@@ -2,7 +2,7 @@ document.getElementById('fetchRepo').addEventListener('click', function() {
     const linkType = document.getElementById('linkTypeSelect').value;
     console.log("User's choice:", linkType);
     localStorage.setItem('linkType', linkType);
-    window.open('/random', '_blank');
+    window.open('/ranlab/random.html', '_blank');
 });
 
 function parseLinksFromReadme(markdown, linkType) {
