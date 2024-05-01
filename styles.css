@@ -12,11 +12,27 @@ body {
     color: #333;
 }
 
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 900px);
+    grid-template-rows: repeat(2);
+    gap: 10px;
+}
+
 .info-section {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     font-size: 20px;
+    padding-left: 6px;
+}
+
+.info-section2 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+    padding-right: 6px;
 }
 
 button {
