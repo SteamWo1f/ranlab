@@ -32,6 +32,17 @@ button {
     border-radius: 5px;
 }
 
+@keyframes spin {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+
+.spin { 
+    animation: spin 3s linear infinite; 
+    width: 200px;
+    height: auto;    
+}
+
 .dice1 {
     width: 150px;
     height: auto;

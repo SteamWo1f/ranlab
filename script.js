@@ -1,14 +1,8 @@
 document.getElementById('fetchRepo').addEventListener('click', function() {
     const linkType = document.getElementById('linkTypeSelect').value;
-    fetch('https://raw.githubusercontent.com/awesome-selfhosted/awesome-selfhosted/master/README.md')
-        .then(response => response.text())
-        .then(data => {
-            const links = parseLinksFromReadme(data, linkType);
-            const randomIndex = Math.floor(Math.random() * links.length);
-            const randomRepoUrl = links[randomIndex];
-            window.location.href = randomRepoUrl;
-        })
-        .catch(error => console.error('Error fetching data:', error));
+    console.log("User's choice:", linkType);
+    localStorage.setItem('linkType', linkType);
+    window.open('/random', '_blank');
 });
 
 function parseLinksFromReadme(markdown, linkType) {
