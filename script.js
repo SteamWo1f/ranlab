@@ -2,7 +2,15 @@ document.getElementById('fetchRepo').addEventListener('click', function() {
     const linkType = document.getElementById('linkTypeSelect').value;
     console.log("User's choice:", linkType);
     localStorage.setItem('linkType', linkType);
-    window.open('/ranlab/random.html', '_blank');
+
+    const currentUrl = window.location.href;
+    let targetUrl = "/random.html";
+
+    if (currentUrl.startsWith("https://steamwo1f.github.io/")) {
+        targetUrl = '/ranlab/random.html';
+    }
+    
+    window.open(targetUrl, '_blank');
 });
 
 function parseLinksFromReadme(markdown, linkType) {
