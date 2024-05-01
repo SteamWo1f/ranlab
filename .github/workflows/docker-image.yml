@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [ "docker" ]
 
-env:
-  REGISTRY: docker.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
 
   build:
@@ -36,7 +32,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        images: steamwolf/ranlab
         
     - name: Build and Push Docker image
       uses: docker/build-push-action@v5
