@@ -33,12 +33,14 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: steamwolf/ranlab
-        
+
     - name: Build and Push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
-        file: ./Dockerfile
+        context:.
+        file:./Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: |
+          ${steps.meta.outputs.tags}
+          steamwolf/ranlab:${{ github.sha }}
         labels: ${{ steps.meta.outputs.labels }}
